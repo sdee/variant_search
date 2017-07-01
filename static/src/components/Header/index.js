@@ -11,7 +11,7 @@ import * as actionCreators from '../../actions/auth';
 
 function mapStateToProps(state) {
     return {
-       
+
     };
 }
 
@@ -36,7 +36,6 @@ export class Header extends Component {
         });
 
     }
-
 
     handleClickOutside() {
         this.setState({
@@ -64,10 +63,6 @@ export class Header extends Component {
             <header>
                 <AppBar
                   title="React-Redux-Flask"
-                  onLeftIconButtonTouchTap={() => this.openNav()}
-                  iconElementRight={
-                      <FlatButton label="Home" onClick={() => this.dispatchNewRoute('/')} />
-                    }
                 />
             </header>
 
@@ -76,6 +71,5 @@ export class Header extends Component {
 }
 
 Header.propTypes = {
-    logoutAndRedirect: React.PropTypes.func,
-    isAuthenticated: React.PropTypes.bool,
+
 };
