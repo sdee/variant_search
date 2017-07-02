@@ -16,7 +16,6 @@ function mapDispatchToProps(dispatch) {
   return {
 
   };
-
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
