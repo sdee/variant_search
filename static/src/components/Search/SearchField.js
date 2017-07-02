@@ -4,6 +4,7 @@ import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
+import RaisedButton from 'material-ui/RaisedButton';
 
 // Imagine you have a list of languages that you'd like to autosuggest.
 const languages = [
@@ -108,8 +109,8 @@ class SearchField extends React.Component {
       onChange: this.onChange
     };
 
-
     return (
+      <div>
       <Autosuggest
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
@@ -124,11 +125,14 @@ class SearchField extends React.Component {
           <ListItem
             primaryText={suggestion.name}
             leftIcon={<ActionGrade />}
+            style={{textAlign: 'left'}}
             />
         )}
         inputProps={inputProps}
         renderInputComponent={(inputProps) => renderInputComponent(inputProps)}
         />
+      <RaisedButton label="Search" primary={true} />
+      </div>
     );
   }
 }
