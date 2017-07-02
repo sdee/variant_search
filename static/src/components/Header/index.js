@@ -13,7 +13,9 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
+  return {
 
+  };
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
