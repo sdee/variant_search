@@ -3,19 +3,8 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-/* containers */
 import { App } from './containers/App';
 import { HomeContainer } from './containers/HomeContainer';
-<<<<<<< HEAD
-import NotFound from './components/NotFound';
-
-
-export default (
-    <Route path="/" component={App}>
-				<IndexRoute component={HomeContainer}/>
-        <Route path="home" component={HomeContainer} />
-				<Route path="search" component={HomeContainer} />
-=======
 import { Results } from './containers/results/Results';
 import NotFound from './components/NotFound';
 
@@ -25,7 +14,6 @@ export default (
         <Route path="home" component={HomeContainer} />
         <Route path="search" component={HomeContainer} />
         <Route path="gene/:geneName" component={Results} />
->>>>>>> dev
         <Route path="*" component={NotFound} />
     </Route>
 );
