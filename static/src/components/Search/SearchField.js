@@ -3,8 +3,8 @@ import TextField from 'material-ui/TextField';
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
-import ActionGrade from 'material-ui/svg-icons/action/grade';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
 import axios from 'axios';
 
 const getSuggestionValue = suggestion => suggestion;
@@ -110,11 +110,13 @@ class SearchField extends React.Component {
                       </List>
         )}
                   renderSuggestion={suggestion => (
+                      <div>
                       <ListItem
                         primaryText={suggestion}
-                        leftIcon={<ActionGrade />}
                         style={{ textAlign: 'left' }}
                       />
+                      <Divider />
+                      </div>
         )}
                   inputProps={inputProps}
                   renderInputComponent={inputProps => renderInputComponent(inputProps)}
@@ -128,8 +130,8 @@ class SearchField extends React.Component {
                 />
             </div>
           }
-                <RaisedButton label="Search" primary style={{ margin: '5px', zIndex: '1' }} />
-                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px', zIndex: '1' }} />
+                <RaisedButton label="Search" primary style={{ margin: '5px' }} />
+                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px' }} />
             </div>
         );
     }
