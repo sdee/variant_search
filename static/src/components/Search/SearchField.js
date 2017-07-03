@@ -63,7 +63,10 @@ class SearchField extends React.Component {
                   });
               } else {
                   const isInputBlank = value.trim() === '';
-                  this.setState({ noSuggestionsAvailable: !isInputBlank, isLoading: false, suggestions: [] });
+                  this.setState({
+                      noSuggestionsAvailable: !isInputBlank,
+                      isLoading: false,
+                      suggestions: [] });
               }
 
           })
@@ -81,13 +84,10 @@ class SearchField extends React.Component {
     };
 
     clearInput = () => {
-      this.setState({value: ''});
+        this.setState({ value: '' });
     };
-
-
     render() {
         const { value, suggestions, isLoading, noSuggestionsAvailable } = this.state;
-       console.log(noSuggestionsAvailable);
     // Autosuggest will pass through all these props to the input.
         const inputProps = {
             value,
@@ -104,32 +104,32 @@ class SearchField extends React.Component {
                   renderSuggestionsContainer={({ children, ...rest }) => (
                       <List {...rest}>
                           {children}
-                </List>
+                      </List>
         )}
-            renderSuggestion={suggestion => (
-                <ListItem
-                  primaryText={suggestion}
-                  leftIcon={<ActionGrade />}
-                  style={{ textAlign: 'left' }}
+                  renderSuggestion={suggestion => (
+                      <ListItem
+                        primaryText={suggestion}
+                        leftIcon={<ActionGrade />}
+                        style={{ textAlign: 'left' }}
+                      />
+        )}
+                  inputProps={inputProps}
+                  renderInputComponent={inputProps => renderInputComponent(inputProps)}
                 />
-        )}
-            inputProps={inputProps}
-            renderInputComponent={inputProps => renderInputComponent(inputProps)}
-          />
-          {
+                {
             noSuggestionsAvailable &&
-              <div className="no-suggestions">
+            <div className="no-suggestions">
                 <ListItem
-                  primaryText={"No Matches"}
+                  primaryText={'No Matches'}
                   style={{ textAlign: 'left' }}
                 />
-              </div>
+            </div>
           }
-            <RaisedButton label="Search" primary />
-                <RaisedButton label="Clear" onClick={this.clearInput} />
-        </div>
-    );
-  }
+                <RaisedButton label="Search" primary style={{ margin: '5px' }} />
+                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px' }} />
+            </div>
+        );
+    }
 }
 
 SearchField.propTypes = {
