@@ -4,12 +4,6 @@ import PropTypes from 'prop-types';
 class ResultsTable extends React.Component {
   constructor() {
     super();
-    // Autosuggest is a controlled component.
-    // This means that you need to provide an input value
-    // and an onChange handler that updates this value (see below).
-    // Suggestions also need to be provided to the Autosuggest,
-    // and they are initially empty because the Autosuggest is closed.
-
     this.state = {
       gene: '',
       variants: []
@@ -19,10 +13,12 @@ class ResultsTable extends React.Component {
 
   render() {
     const { gene, variants } = this.state;
-     const { geneName } = this.props.geneName;
+    const { geneName } = this.props;
+    console.log(geneName);
     return (
 
       <div>
+        Gene
         <h1>gene</h1>
         <h1>{geneName}</h1>
       </div>
@@ -31,7 +27,7 @@ class ResultsTable extends React.Component {
   }
 }
 ResultsTable.propTypes = {
-params: PropTypes.array.isRequired,
+geneName: PropTypes.string.isRequired,
 };
 
 export default ResultsTable;

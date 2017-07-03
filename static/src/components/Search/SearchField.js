@@ -110,29 +110,29 @@ class SearchField extends React.Component {
     };
 
     return (
-      <div>
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestionsContainer={({ children, ...rest }) => (
-            <List {...rest}>
-                {children}
-            </List>
+        <div>
+          <Autosuggest
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            renderSuggestionsContainer={({ children, ...rest }) => (
+                <List {...rest}>
+                    {children}
+                </List>
         )}
-        renderSuggestion={suggestion => (
-            <ListItem
-              primaryText={suggestion.name}
-              leftIcon={<ActionGrade />}
-              style={{ textAlign: 'left' }}
-            />
+            renderSuggestion={suggestion => (
+                <ListItem
+                  primaryText={suggestion.name}
+                  leftIcon={<ActionGrade />}
+                  style={{ textAlign: 'left' }}
+                />
         )}
-        inputProps={inputProps}
-        renderInputComponent={inputProps => renderInputComponent(inputProps)}
-      />
-          <RaisedButton label="Search" primary />
-      </div>
+            inputProps={inputProps}
+            renderInputComponent={inputProps => renderInputComponent(inputProps)}
+          />
+            <RaisedButton label="Search" primary />
+        </div>
     );
   }
 }
