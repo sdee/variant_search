@@ -3,7 +3,6 @@
 import React from 'react';
 import { Route, IndexRoute } from 'react-router';
 
-/* containers */
 import { App } from './containers/App';
 import { HomeContainer } from './containers/HomeContainer';
 import { Results } from './containers/results/Results';

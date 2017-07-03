@@ -1,25 +1,33 @@
-from flask import request, render_template, jsonify, url_for, redirect, g
-import marisa_trie
-from index import app, db
 import os
 import json
+import csv
+from collections import defaultdict
+from flask import request, g
+import marisa_trie
+from index import app, db
 from sets import Set
 
-# gene_names = [u'mdm2', u'mdm3', u'prnt2', u'alpha2']
-
-cwd = os.getcwd()
-print cwd
-with open('./application/tests/variants_medium.tsv') as f:
+@app.before_request
+def initialize_search_data():
     genes = Set()
-    lines = f.readlines()
-    for line in lines:
-        gene = line.split('\t')[0]
-        genes.add(gene)
-gene_names = map(unicode, genes)
+    variants_by_gene = defaultdict(list)
+    with open('./application/tests/variants_slice.tsv') as f:
+        lines = csv.DictReader(f, delimiter='\t')
+        for line in lines:
+            gene = line['Gene']
+            genes.add(gene)
+            variants_by_gene[gene].append(line)
+    gene_names = map(unicode, genes)
+    g.gene_name_trie = _build_trie(gene_names)
+
+
+def _build_trie(gene_names):
+    return marisa_trie.Trie(gene_names)
+
 
 def get_suggestions(query):
-    trie = marisa_trie.Trie(gene_names)
-    return trie.keys(unicode(query))
+    return g.gene_name_trie.keys(unicode(query))
+
 
 @app.route('/api/suggestions/<fragment>', methods=['GET'])
 def index(fragment=None):
