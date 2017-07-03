@@ -25,14 +25,12 @@ class SearchField extends React.Component {
         super();
 
         this.state = {
-          value: '',
-          suggestions: [],
-          isLoading: false,
-      };
-
-      this.lastRequestId = null;
-
-  }
+            value: '',
+            suggestions: [],
+            isLoading: false,
+        };
+        this.lastRequestId = null;
+    }
 
     onChange = (event, { newValue }) => {
         this.setState({
@@ -58,9 +56,14 @@ class SearchField extends React.Component {
             axios.get(`/api/suggestions/${value}`)
           .then(({ data }) => {
               if (data.results.length > 0) {
-                this.setState({ suggestions: data.results, isLoading: false, noSuggestionsAvailable: false });
-              }              else {
-                this.setState({ noSuggestionsAvailable: true, isLoading: false, suggestions: [] });
+                  this.setState({
+                      suggestions: data.results,
+                      isLoading: false,
+                      noSuggestionsAvailable: false,
+                  });
+              } else {
+                  const isInputBlank = value.trim() === '';
+                  this.setState({ noSuggestionsAvailable: !isInputBlank, isLoading: false, suggestions: [] });
               }
 
           })
@@ -73,9 +76,14 @@ class SearchField extends React.Component {
     onSuggestionsClearRequested = () => {
         this.setState({
             suggestions: [],
-            noSuggestionsAvailable: false
+            noSuggestionsAvailable: false,
         });
     };
+
+    clearInput = () => {
+      this.setState({value: ''});
+    };
+
 
     render() {
         const { value, suggestions, isLoading, noSuggestionsAvailable } = this.state;
@@ -113,12 +121,12 @@ class SearchField extends React.Component {
               <div className="no-suggestions">
                 <ListItem
                   primaryText={"No Matches"}
-                  
                   style={{ textAlign: 'left' }}
                 />
               </div>
           }
             <RaisedButton label="Search" primary />
+                <RaisedButton label="Clear" onClick={this.clearInput} />
         </div>
     );
   }
