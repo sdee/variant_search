@@ -9,6 +9,8 @@ import axios from 'axios';
 
 const getSuggestionValue = suggestion => suggestion;
 
+const shouldRenderSuggestions = value => value.trim().length >= 2;
+
 const renderInputComponent = inputProps => (
     <TextField
       hintText="Type a gene name"
@@ -101,6 +103,7 @@ class SearchField extends React.Component {
                   onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                   onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                   getSuggestionValue={getSuggestionValue}
+                  shouldRenderSuggestions={shouldRenderSuggestions}
                   renderSuggestionsContainer={({ children, ...rest }) => (
                       <List {...rest}>
                           {children}
