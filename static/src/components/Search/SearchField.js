@@ -114,6 +114,7 @@ class SearchField extends React.Component {
                       <ListItem
                         primaryText={suggestion}
                         style={{ textAlign: 'left' }}
+                        hoverColor={'#dddddd'}
                       />
                       <Divider />
                       </div>
