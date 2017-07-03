@@ -31,6 +31,7 @@ def get_gene_name_suggestions(query, strict_casing=False):
     suggestions = g.gene_name_trie.keys(unicode(query))
     if not strict_casing and not suggestions and has_lowercase(query):
         suggestions = g.gene_name_trie.keys(unicode(str(query).upper()))
+    suggestions.sort()  # sort to ensure consistent results every time
     return suggestions
 
 
@@ -43,6 +44,8 @@ def suggestions_endpoint(fragment=None):
 @app.route('/api/variants/<genename>', methods=['GET'])
 def variants_endpoint(genename=None):
     if genename in g.variants_by_gene:
-        return json.dumps(g.variants_by_gene[genename])
+        variants = g.variants_by_gene[genename]
+        variants.sort()
+        return json.dumps()
     else:
         abort(404)  # resource not found
