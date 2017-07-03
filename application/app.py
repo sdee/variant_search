@@ -21,7 +21,7 @@ def get_suggestions(query):
     trie = marisa_trie.Trie(gene_names)
     return trie.keys(unicode(query))
 
-@app.route('/api/suggestions/', methods=['GET'])
-def index():
-    suggestions = get_suggestions('CA')
-    return json.dumps(dict(results=suggestions))
+@app.route('/api/suggestions/<fragment>', methods=['GET'])
+def index(fragment=None):
+    suggestions = get_suggestions(fragment) if fragment else []
+    return json.dumps(dict(results=[str(s) for s in suggestions]))

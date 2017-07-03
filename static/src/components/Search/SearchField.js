@@ -5,53 +5,10 @@ import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import ActionGrade from 'material-ui/svg-icons/action/grade';
 import RaisedButton from 'material-ui/RaisedButton';
+import axios from 'axios';
 
-// Imagine you have a list of languages that you'd like to autosuggest.
-const languages = [
-  {
-    name: 'C',
-    year: 1972
-  },
-  {
-    name: 'Elm',
-    year: 2012
-  }
-];
 
-// Teach Autosuggest how to calculate suggestions for any given input value.
-const getSuggestions = value => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-  // change!!
-  return inputLength === 0 ? [] : languages.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue,
-  );
-};
-
-// When suggestion is clicked, Autosuggest needs to populate the input
-// based on the clicked suggestion. Teach Autosuggest how to calculate the
-// input value for every given suggestion.
-const getSuggestionValue = suggestion => suggestion.name;
-
-const renderSuggestionsContainer = ({ containerProps, children, query }) => {
-  const { ref, ...restContainerProps } = containerProps;
-  const callRef = list=> {
-    if (list !== null) {
-      ref(list.component);
-    }
-  };
-  return (
-    <List ref={callRef} {...restContainerProps}>
-      {children}
-    </List>
-  );
-}
-
-const renderSuggestion = suggestion => (
-  <ListItem>
-    <ListItemText primary={suggestion.name} />
-  </ListItem>
-);
+const getSuggestionValue = suggestion =>  suggestion;
 
 const renderInputComponent = inputProps => (
   <TextField
@@ -75,8 +32,12 @@ class SearchField extends React.Component {
     // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: '',
-      suggestions: []
+      suggestions: [],
+      isLoading: false
     };
+
+    this.lastRequestId = null;
+
   }
 
   onChange = (event, { newValue }) => {
@@ -88,10 +49,27 @@ class SearchField extends React.Component {
   // Autosuggest will call this function every time you need to update suggestions.
   // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
-    this.setState({
-      suggestions: getSuggestions(value)
-    });
+    this.loadSuggestions(value);
   };
+
+loadSuggestions = (value) => {
+  if (this.lastRequestId !== null) {
+    clearTimeout(this.lastRequestId);
+  }
+
+  this.setState({
+    isLoading: true
+  });
+
+  this.lastRequestId = setTimeout(() => {
+      axios.get('/api/suggestions/'+value)
+          .then(({ data })=> {
+          	this.setState({suggestions: data.results, isLoading: false})
+          })
+          .catch((err)=> {})
+
+  }, 1000);
+};
 
   // Autosuggest will call this function every time you need to clear suggestions.
   onSuggestionsClearRequested = () => {
@@ -101,7 +79,7 @@ class SearchField extends React.Component {
   };
 
   render() {
-    const { value, suggestions } = this.state;
+    const { value, suggestions, isLoading } = this.state;
 
     // Autosuggest will pass through all these props to the input.
     const inputProps = {
@@ -123,7 +101,7 @@ class SearchField extends React.Component {
         )}
             renderSuggestion={suggestion => (
                 <ListItem
-                  primaryText={suggestion.name}
+                  primaryText={suggestion}
                   leftIcon={<ActionGrade />}
                   style={{ textAlign: 'left' }}
                 />
