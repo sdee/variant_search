@@ -128,8 +128,8 @@ class SearchField extends React.Component {
                 />
             </div>
           }
-                <RaisedButton label="Search" primary style={{ margin: '5px' }} />
-                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px' }} />
+                <RaisedButton label="Search" primary style={{ margin: '5px', zIndex: '1' }} />
+                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px', zIndex: '1' }} />
             </div>
         );
     }
