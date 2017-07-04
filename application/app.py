@@ -8,6 +8,8 @@ from index import app, db
 from basedir import basedir
 from sets import Set
 
+VARIANT_FILE_PATH= app.config['VARIANT_FILE_PATH']
+
 class GeneNameStore:
 
     def __init__(self, gene_names):
@@ -27,7 +29,7 @@ class GeneNameStore:
 def initialize_search_data():
     genes = Set()
     variants_by_gene = defaultdict(list)
-    with open(os.path.join(basedir, 'application/tests/data/variants_medium.tsv')) as f:
+    with open(os.path.join(basedir, VARIANT_FILE_PATH)) as f:
         lines = unicodecsv.DictReader(f, delimiter='\t')
         for line in lines:
             gene = line['Gene']
