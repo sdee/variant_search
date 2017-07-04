@@ -1,16 +1,21 @@
 import React from "react";
 import axios from 'axios';
+const ReactDataGrid = require('react-data-grid');
 
 export default class ResultsTable extends React.Component {
 
   constructor(props) {
       super(props);
-
       this.state = {
-        geneName: '',
-        variants: []
+        geneName: this.props.params.geneName,
+        variants: [],
+
       };
     }
+
+    getRows = (i) => {
+      return this.state.variants[i];
+    };
 
   componentDidMount() {
     console.log("mount");
@@ -31,7 +36,7 @@ export default class ResultsTable extends React.Component {
     let columns = [
   {
     key: 'Gene',
-    name: 'id',
+    name: 'Gene',
     locked: true
   },
   {
@@ -42,8 +47,15 @@ export default class ResultsTable extends React.Component {
 
     return (
       <div>
-        <h1>Test</h1>
-        {geneName}
+        <h1>{`Variants for ${this.state.geneName}`}</h1>
+        <ReactDataGrid
+      enableCellSelect={true}
+      columns={columns}
+      rowGetter={this.getRows}
+      rowsCount={this.state.variants.length}
+
+      minHeight={500}
+      />
       </div>
     );
   }
