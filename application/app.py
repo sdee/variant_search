@@ -1,11 +1,12 @@
 import json
+import os
 import unicodecsv
 from collections import defaultdict
-from flask import g, abort
+from flask import Flask, g, abort
 import marisa_trie
 from index import app, db
+from basedir import basedir
 from sets import Set
-
 
 class GeneNameStore:
 
@@ -26,7 +27,7 @@ class GeneNameStore:
 def initialize_search_data():
     genes = Set()
     variants_by_gene = defaultdict(list)
-    with open('./application/tests/data/variants_medium.tsv') as f:
+    with open(os.path.join(basedir, 'application/tests/data/variants_medium.tsv')) as f:
         lines = unicodecsv.DictReader(f, delimiter='\t')
         for line in lines:
             gene = line['Gene']
