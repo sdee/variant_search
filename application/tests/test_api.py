@@ -6,18 +6,18 @@ class TestAPI(BaseTestConfig):
 
 
     def test_suggestions_endpoint(self):
-        resp = self.app.get('/api/suggestions/AB')
+        resp = self.app.get('/api/suggestions/MA')
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))['results']
-        self.assertEqual(data, [u'ABCA12', u'ABCA3', u'ABCC1', u'ABCC2', u'ABCC6', u'ABCC9', u'ABHD12', u'ABHD5'])
+        self.assertEqual(data, [u'MAPK10', u'MARVELD2', u'MAT1A'])
 
-        resp = self.app.get('/api/suggestions/ab') #expect same results with lowercase
+        resp = self.app.get('/api/suggestions/ma') #expect same results with lowercase
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))['results']
-        self.assertEqual(data, [u'ABCA12', u'ABCA3', u'ABCC1', u'ABCC2', u'ABCC6', u'ABCC9', u'ABHD12', u'ABHD5'])
+        self.assertEqual(data, [u'MAPK10', u'MARVELD2', u'MAT1A'])
 
         # no matches
-        resp = self.app.get('/api/suggestions/ABX')
+        resp = self.app.get('/api/suggestions/MAQ')
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))['results']
         self.assertEqual(data, [])
@@ -28,7 +28,7 @@ class TestAPI(BaseTestConfig):
 
 
     def test_variants_endpoint(self):
-        resp = self.app.get('/api/variants/EYS')
+        resp = self.app.get('/api/variants/MAT1A')
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))
         self.assertEqual(len(data), 3)  # number of variants

@@ -98,3 +98,104 @@ MAT1A							Pathogenic	Pathogenic	ClinVar	1998-02-03	2017-04-25	https://www.ncbi
 GNAS-AS1							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001271	
 FAM126A							Pathogenic	Pathogenic	ClinVar	2008-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001276	
 LAMTOR2							Pathogenic	Pathogenic	ClinVar	2007-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001298	
+DOK7							Pathogenic	Pathogenic	ClinVar	2009-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001343	
+ZNF750							Pathogenic	Pathogenic	ClinVar	2006-07-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001358	
+DFNB59							Pathogenic	Pathogenic	ClinVar	2007-06-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001362	
+DFNB59							Pathogenic	Pathogenic	ClinVar	2007-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001364	
+DFNB59							Pathogenic	Pathogenic	ClinVar	2007-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001365	
+DFNB59							Pathogenic	Pathogenic	ClinVar	2007-02-28	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001366	
+BBS10							Pathogenic	Pathogenic	ClinVar	2006-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001393	
+CC2D1A							Pathogenic	Pathogenic	ClinVar	2006-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001419	
+ALDH5A1							Pathogenic	Pathogenic	ClinVar	2003-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001420	
+ALDH5A1							Pathogenic	Pathogenic	ClinVar	1998-08-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001421	
+ALDH5A1			NG_008161.1:g.31299_33753del,NG_008161.1:g.31299_33753del2455,NC_000006.12:g.24521267_24523721del2455,NC_000006.11:g.24521495_24523949del2455,NM_170740.1:c.1053+723_1212+796del		NG_008161.1,NG_008161.1,NC_000006.12,NC_000006.11,NM_170740.1		Pathogenic	Pathogenic	ClinVar	2006-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001425		GRCh37	6	24521495	24523949	-	-	NC_000006.11	NULL	NULL
+SLC34A3			NG_017008.1:g.8205_8305del101,NC_000009.12:g.137233961_137234061del		NG_017008.1,NC_000009.12		Pathogenic	Pathogenic	ClinVar	2006-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001498	
+SLC34A3			NG_017008.1:g.8561_8645del85		NG_017008.1		Pathogenic	Pathogenic	ClinVar	2006-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001500	
+COQ2							Pathogenic	Pathogenic	ClinVar	2007-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001502	
+HMBS							Pathogenic	Pathogenic	ClinVar	1998-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001506	
+HMBS							Pathogenic	Pathogenic	ClinVar	1989-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001509	
+HMBS							Pathogenic	Pathogenic	ClinVar	2000-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001546	
+HMBS							Pathogenic	Pathogenic	ClinVar	2000-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001547	
+TRIOBP							Pathogenic	Pathogenic	ClinVar	2006-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001562	
+LPL							Pathogenic	Pathogenic	ClinVar	2005-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001603	
+LPL							Pathogenic	Pathogenic	ClinVar	1995-05-09	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001614	
+LPL							Pathogenic	Pathogenic	ClinVar	2001-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001620	
+RSPO1							Pathogenic	Pathogenic	ClinVar	2006-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001670	
+RSPO1							Pathogenic	Pathogenic	ClinVar	2006-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001671	
+RSPO1							Pathogenic	Pathogenic	ClinVar	2008-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001672	
+L2HGDH			NC_000014.9:g.(50000000_?)_(?_50247254)del	L2HGDH, EX1-9 DEL	NC_000014.9		Pathogenic	Pathogenic	ClinVar	2004-11-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001678	
+THAP1							Pathogenic	Pathogenic	ClinVar	2009-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001712	
+THAP1							Pathogenic	Pathogenic	ClinVar	2009-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001714	
+THAP1							Pathogenic	Pathogenic	ClinVar	2009-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001716	
+THAP1							Pathogenic	Pathogenic	ClinVar	2009-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001717	
+CHMP2B							Pathogenic	Pathogenic	ClinVar	2006-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001719	
+TOPORS							Pathogenic	Pathogenic	ClinVar	2007-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001723	
+TOPORS							Pathogenic	Pathogenic	ClinVar	2007-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001724	
+CDHR1							Pathogenic	Pathogenic	ClinVar	2010-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001742	
+LHFPL5							Pathogenic	Pathogenic	ClinVar	2006-08-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001762	
+LHFPL5							Pathogenic	Pathogenic	ClinVar	2006-07-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001764	
+NIPAL4							Pathogenic	Pathogenic	ClinVar	2004-10-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001800	
+NIPAL4							Pathogenic	Pathogenic	ClinVar	2007-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001802	
+GIF							Pathogenic	Pathogenic	ClinVar	2005-03-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001813	
+GIF							Pathogenic	Pathogenic	ClinVar	2005-03-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001814	
+GIF							Pathogenic	Pathogenic	ClinVar	2005-03-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001815	
+GIF							Pathogenic	Pathogenic	ClinVar	2005-03-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001817	
+GIF							Pathogenic	Pathogenic	ClinVar	2005-03-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001818	
+DBH							Pathogenic	Pathogenic	ClinVar	2011-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001819	
+CYP17A1							Pathogenic	Pathogenic	ClinVar	1990-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001851	
+CYP17A1							Pathogenic	Pathogenic	ClinVar	2006-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001878	
+LPAR6							Pathogenic	Pathogenic	ClinVar	2008-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001899	
+LPAR6							Pathogenic	Pathogenic	ClinVar	2011-08-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001900	
+MPLKIP							Pathogenic	Pathogenic	ClinVar	2005-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001920	
+D2HGDH				D2HGDH, IVS1AS, A-G, -23			Pathogenic	Pathogenic	ClinVar	2005-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001928	
+D2HGDH				D2HGDH, IVS4AS, A-G, -2			Pathogenic	Pathogenic	ClinVar	2005-10-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001929	
+D2HGDH				D2HGDH, 2-BP DUP, 326TC			Pathogenic	Pathogenic	ClinVar	2005-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001931	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001941	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001942	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001943	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001944	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001945	
+PDCD10							Pathogenic	Pathogenic	ClinVar	2005-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001946	
+PDCD10				PDCD10, DEL			Pathogenic	Pathogenic	ClinVar	2008-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001947	
+POU6F2							Pathogenic	Pathogenic	ClinVar	2004-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001949	
+MUT							Pathogenic	Pathogenic	ClinVar	1994-06-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001960	
+MUT							Pathogenic	Pathogenic	ClinVar	2007-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001966	
+MUT							Pathogenic	Pathogenic	ClinVar	2007-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000001967	
+ADA							Pathogenic	Pathogenic	ClinVar	1997-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002037	
+ADA							Pathogenic	Pathogenic	ClinVar	1993-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002049	
+ADA							Pathogenic	Pathogenic	ClinVar	1994-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002051	
+ADA			LRG_16t1:c.781-3_781delCAGAins17,LRG_16:g.34081_34084delCAGAins17,NG_007385.1:g.[34080insTGGAAGAG;34084insTCTGG],NM_000022.2:c.[781-4insTGGAAGAG;781insTCTGG]		LRG_16t1,LRG_16,NG_007385.1,NM_000022.2		Pathogenic	Pathogenic	ClinVar	1994-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002052		GRCh37	20	43251293	43251296	-	-	NC_000020.10	NULL	NULL
+ADA							Pathogenic	Pathogenic	ClinVar	1996-07-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002055	
+ADA							Pathogenic	Pathogenic	ClinVar	2002-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002060	
+FREM1							Pathogenic	Pathogenic	ClinVar	2009-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002065	
+SGCG							Pathogenic	Pathogenic	ClinVar	2000-08-12	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002081	
+SGCG							Pathogenic	Pathogenic	ClinVar	1996-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002082	
+SGCG							Pathogenic	Pathogenic	ClinVar	1996-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002084	
+SGCG							Pathogenic	Pathogenic	ClinVar	2000-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002085	
+SLC6A19							Pathogenic	Pathogenic	ClinVar	2008-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002098	
+SLC6A19							Pathogenic	Pathogenic	ClinVar	2008-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002099	
+RDH12							Pathogenic	Pathogenic	ClinVar	2008-09-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002141	
+DFNA5							Pathogenic	Pathogenic	ClinVar	2004-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002173	
+PC							Pathogenic	Pathogenic	ClinVar	2002-07-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002179	
+DLAT							Pathogenic	Pathogenic	ClinVar	2005-08-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002190	
+PDHX	NM_003477.2:c.78_162del85		NM_003477.2:c.78_162del85,NG_013368.1:g.5604_20276del14673,NC_000011.10:g.34916733_34931405del14673		NM_003477.2,NG_013368.1,NC_000011.10		Pathogenic	Pathogenic	ClinVar	1997-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002192	
+PDHX	NM_001166158.1:c.343-6446_343-6388del	p.Asp322Alafs	NM_001166158.1:c.343-6446_343-6388del,NM_003477.2:c.965_1023del59,NG_013368.1:g.66995_67053del59,NC_000011.10:g.34978124_34978182del59,NC_000011.9:g.34999671_34999729del59,NP_003468.2:p.Asp322Alafs		NM_001166158.1,NM_003477.2,NG_013368.1,NC_000011.10,NC_000011.9,NP_003468.2		Pathogenic	Pathogenic	ClinVar	1997-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002193		GRCh37	11	34999671	34999729	-	-	NC_000011.9	NULL	NULL
+PDHX			AJ298105.1:g.61273_107768del46496ins6086		AJ298105.1		Pathogenic	Pathogenic	ClinVar	2007-02-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002198	
+PDHX	NM_003477.2:c.1183-3088_1247+760del		NM_003477.2:c.1183-3088_1247+760del,NG_013368.1:g.78098_82010del3913,NC_000011.10:g.34989227_34993139del3913,NC_000011.9:g.35010774_35014686del3913		NM_003477.2,NG_013368.1,NC_000011.10,NC_000011.9		Pathogenic	Pathogenic	ClinVar	2006-04-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002200		GRCh37	11	35010774	35014686	-	-	NC_000011.9	NULL	NULL
+SLC39A13							Pathogenic	Pathogenic	ClinVar	2008-06-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002214	
+FIGLA							Pathogenic	Pathogenic	ClinVar	2008-06-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002220	
+ROBO3							Pathogenic	Pathogenic	ClinVar	2004-06-04	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002257	
+ROBO3							Pathogenic	Pathogenic	ClinVar	2004-06-04	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002262	
+ROBO3							Pathogenic	Pathogenic	ClinVar	2004-06-04	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002265	
+ROBO3							Pathogenic	Pathogenic	ClinVar	2006-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002266	
+ROBO3							Pathogenic	Pathogenic	ClinVar	2006-03-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002267	
+STRADA							Pathogenic	Pathogenic	ClinVar	2010-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002270	
+GLIS2							Pathogenic	Pathogenic	ClinVar	2007-08-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002297	
+NCF1							Pathogenic	Pathogenic	ClinVar	1993-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002338	
+NCF1							Pathogenic	Pathogenic	ClinVar	2001-01-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002340	
+CYBA							Pathogenic	Pathogenic	ClinVar	1990-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002344	
+CYBA							Pathogenic	Pathogenic	ClinVar	1990-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002345	
+CYBA							Pathogenic	Pathogenic	ClinVar	1992-11-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002350	
+CYBA							Pathogenic	Pathogenic	ClinVar	2002-05-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002354	
+SYNE1							Pathogenic	Pathogenic	ClinVar	2009-09-15	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002425	
+LRRC8A							Pathogenic	Pathogenic	ClinVar	2003-12-01	2017-04-25	https://www.ncbi.nlm.nih.gov/clinvar/RCV000002472	
