@@ -51,7 +51,7 @@ def variants_endpoint(gene_name=None):
     if gene_name in g.variants_by_gene:
         variants = g.variants_by_gene[gene_name]
         #Note: does not guarantee deterministic sort order, this field is sometimes missing and may not be unique
-        variants.sort(lambda v: (v['Nucleotide Change']))
+        variants.sort(key=lambda v: v['Nucleotide Change'])
         return json.dumps(variants)
     else:
         abort(404)  # resource not found
