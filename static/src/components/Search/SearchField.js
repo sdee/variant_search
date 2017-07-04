@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router';
+import {Link} from 'react-router';
 
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
@@ -117,12 +113,12 @@ class SearchField extends React.Component {
         )}
                   renderSuggestion={suggestion => (
                       <div>
-                      <ListItem
-                        primaryText={suggestion}
-                        style={{ textAlign: 'left' }}
-                        hoverColor={'#dddddd'}
-                      />
-                      <Divider />
+                          <ListItem
+                            primaryText={suggestion}
+                            style={{ textAlign: 'left' }}
+                            hoverColor={'#dddddd'}
+                          />
+                          <Divider />
                       </div>
         )}
                   inputProps={inputProps}
@@ -137,9 +133,18 @@ class SearchField extends React.Component {
                 />
             </div>
           }
-                <RaisedButton label="Search" primary style={{ margin: '5px' }} containerElement={<Link to={`/gene/${this.state.value}`} />}
-  linkButton={true} />
-                <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px' }} />
+                <RaisedButton
+                  label="Search" primary
+                  style={{ margin: '5px' }}
+                  containerElement={<Link to={`/gene/${this.state.value}`} />}
+                  linkButton
+                />
+
+                <RaisedButton
+                  label="Clear"
+                  onClick={this.clearInput}
+                  style={{ margin: '5px' }}
+                />
             </div>
         );
     }
