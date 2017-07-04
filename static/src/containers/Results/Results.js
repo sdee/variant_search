@@ -11,6 +11,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
 });
 
-const Results = withRouter(connect(mapStateToProps, mapDispatchToProps)(ResultsTable));
-
-export default Results;
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ResultsTable));
