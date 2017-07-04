@@ -137,8 +137,8 @@ class SearchField extends React.Component {
                 />
             </div>
           }
-                <RaisedButton label="Search" primary style={{ margin: '5px' }} containerElement={<Link to="/gene/EYS" />}
-  linkButton={true} /> 
+                <RaisedButton label="Search" primary style={{ margin: '5px' }} containerElement={<Link to={`/gene/${this.state.value}`} />}
+  linkButton={true} />
                 <RaisedButton label="Clear" onClick={this.clearInput} style={{ margin: '5px' }} />
             </div>
         );
