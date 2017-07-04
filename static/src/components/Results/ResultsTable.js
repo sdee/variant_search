@@ -1,33 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
 
-class ResultsTable extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      gene: '',
-      variants: []
-    };
-
-  }
-
+export default class ResultsTable extends React.Component {
   render() {
-    const { gene, variants } = this.state;
-    const { geneName } = this.props;
+    const { query } = this.props.location;
+    const { params } = this.props;
+    const {geneName} = params;
+    console.log(this.props);
     console.log(geneName);
     return (
-
       <div>
-        Gene
-        <h1>gene</h1>
-        <h1>{geneName}</h1>
+        <h1>Test</h1>
+        {geneName}
       </div>
     );
-
   }
 }
-ResultsTable.propTypes = {
-geneName: PropTypes.string.isRequired,
-};
-
-export default ResultsTable;
