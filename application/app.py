@@ -42,10 +42,10 @@ def suggestions_endpoint(fragment=None):
     return json.dumps(dict(results=[str(s) for s in suggestions]))
 
 
-@app.route('/api/variants/<genename>', methods=['GET'])
-def variants_endpoint(genename=None):
-    if genename in g.variants_by_gene:
-        variants = g.variants_by_gene[genename]
+@app.route('/api/variants/<gene_name>', methods=['GET'])
+def variants_endpoint(gene_name=None):
+    if gene_name in g.variants_by_gene:
+        variants = g.variants_by_gene[gene_name]
         variants.sort()
         return json.dumps()
     else:
