@@ -26,7 +26,7 @@ class GeneNameStore:
 def initialize_search_data():
     genes = Set()
     variants_by_gene = defaultdict(list)
-    with open('./application/tests/variants_slice.tsv') as f:
+    with open('./application/tests/data/variants_medium.tsv') as f:
         lines = unicodecsv.DictReader(f, delimiter='\t')
         for line in lines:
             gene = line['Gene']
@@ -47,7 +47,7 @@ def variants_endpoint(gene_name=None):
     if gene_name in g.variants_by_gene:
         variants = g.variants_by_gene[gene_name]
         #Note: does not guarantee deterministic sort order, this field is sometimes missing and may not be unique
-        variants.sort(lambda v: (v['Nucleotide Change'])) 
+        variants.sort(lambda v: (v['Nucleotide Change']))
         return json.dumps(variants)
     else:
         abort(404)  # resource not found
