@@ -6,7 +6,7 @@ class TestApi(BaseTestConfig):
 
     def test_suggestions(self):
         resp = self.app.get('http://localhost/api/suggestions/AB')
-        print resp
-        
+        print resp.body
+
 if __name__ == '__main__':
     unittest.main()
