@@ -47,6 +47,6 @@ def variants_endpoint(gene_name=None):
     if gene_name in g.variants_by_gene:
         variants = g.variants_by_gene[gene_name]
         variants.sort()
-        return json.dumps()
+        return json.dumps(variants)
     else:
         abort(404)  # resource not found
