@@ -8,7 +8,8 @@ from index import app, db
 from basedir import basedir
 from sets import Set
 
-VARIANT_FILE_PATH= app.config['VARIANT_FILE_PATH']
+VARIANT_FILE_PATH = app.config['VARIANT_FILE_PATH']
+
 
 class GeneNameStore:
 
