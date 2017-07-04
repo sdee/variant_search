@@ -18,9 +18,6 @@ export default class ResultsTable extends React.Component {
     };
 
   componentDidMount() {
-    console.log("mount");
-    console.log(this.props.params.geneName);
-    console.log(`/api/gene/${this.props.params.geneName}`)
      axios.get(`/api/variants/${this.props.params.geneName}`)
        .then(({ data }) => {
          console.log(data);
@@ -49,12 +46,12 @@ export default class ResultsTable extends React.Component {
   {
     key: 'Protein Change',
     name: 'Protein Change',
-    width: 80
+    width: 110,
   },
   {
     key: 'Alias',
     name: 'Alias',
-    width: 80
+    width: 80,
   },
   {
     key: 'Region',
@@ -86,12 +83,13 @@ export default class ResultsTable extends React.Component {
     return (
       <div>
         <h1>{`Variants for ${this.state.geneName}`}</h1>
+        <br/>
         <ReactDataGrid
       enableCellSelect={true}
       columns={columns}
       rowGetter={this.getRows}
       rowsCount={this.state.variants.length}
-      minWidth={1350}
+      minWidth={1400}
       minHeight={300}
       />
       </div>
