@@ -19,7 +19,7 @@ class GeneNameStore:
     def get_suggestions(self, query, strict_casing=False):
         def has_lowercase(query):
             return any(filter(str.islower, str(query)))
-        suggestions = self.trie.keys(unicode(query))
+        suggestions = self.trie.keys(query)
         if not strict_casing and not suggestions and has_lowercase(query):
             suggestions = self.trie.keys(unicode(str(query).upper()))
         suggestions.sort()  # sort to ensure consistent results every time

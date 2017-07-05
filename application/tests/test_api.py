@@ -1,4 +1,4 @@
-import unittest, StringIO, os, requests, json
+import unittest,json
 from testing_config import BaseTestConfig
 
 # integration test for Annotate endpoint
