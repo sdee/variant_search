@@ -2,7 +2,7 @@ module.exports = function (config) {
     config.set({
         basePath: 'src',
         singleRun: true,
-        frameworks: ['mocha'],
+        frameworks: ['mocha', 'expect'],
         reporters: ['dots'],
         browsers: ['Chrome'],
         files: [
@@ -23,7 +23,8 @@ module.exports = function (config) {
                     exclude: /\/node_modules\//,
                     loader: 'babel',
                     query: {
-                        presets: ['airbnb'],
+                      plugins: ['transform-decorators-legacy', 'transform-regenerator'],
+                        presets: ['react', 'es2015', 'stage-1'],
                     },
                 }],
             },
