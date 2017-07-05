@@ -4,7 +4,7 @@ import unicodecsv
 from collections import defaultdict
 from flask import Flask, g, abort
 import marisa_trie
-from index import app, db
+from index import app
 from basedir import basedir
 from sets import Set
 
