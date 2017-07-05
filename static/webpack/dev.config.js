@@ -17,6 +17,12 @@ module.exports = {
             test: /\.scss$/,
             loader: 'style!css?localIdentName=[path][name]--[local]!postcss-loader!sass',
         }],
+        rules: [
+     {
+       test: /\.json$/,
+       use: 'json-loader'
+     }
+   ]
     },
 
     plugins: [

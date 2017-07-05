@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import {Link} from 'react-router';
+import { Link } from 'react-router';
 
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
