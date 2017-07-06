@@ -2,7 +2,7 @@ import unittest
 from application.app import GeneNameStore
 from testing_config import BaseTestConfig
 
-class TestAPI(BaseTestConfig):
+class TestGeneStore(BaseTestConfig):
 
 
     def test_trie(self):

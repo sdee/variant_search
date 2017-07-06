@@ -1,12 +1,11 @@
 from flask_testing import TestCase
-from application.app import app, db
+from application.app import app
 import os
 from setup import basedir
 import json
 
 
 class BaseTestConfig(TestCase):
-
 
     def create_app(self):
         app.config.from_object('config.TestingConfig')
@@ -16,5 +15,4 @@ class BaseTestConfig(TestCase):
         self.app = self.create_app().test_client()
 
     def tearDown(self):
-        db.session.remove()
-        db.drop_all()
+        pass
