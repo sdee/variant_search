@@ -3,7 +3,6 @@ import { mount, render, shallow } from 'enzyme';
 import { Route, MemoryRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import ResultsTable from '../../components/Results/ResultsTable';
-import SearchField from '../../components/Search/SearchField';
 var TestUtils = require('react-dom/test-utils')
 
 const ReactDataGrid = require('react-data-grid');
