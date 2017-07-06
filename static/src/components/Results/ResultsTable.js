@@ -1,6 +1,14 @@
 import React from "react";
 import axios from 'axios';
 const ReactDataGrid = require('react-data-grid');
+import {
+  Table,
+  TableBody,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
 
 export default class ResultsTable extends React.Component {
 
@@ -12,8 +20,6 @@ export default class ResultsTable extends React.Component {
         };
     }
 
-    getRows = i => this.state.variants[i];
-
     componentDidMount() {
         axios.get(`/api/variants/${this.state.geneName}`)
         .then(({ data }) => {
@@ -23,70 +29,55 @@ export default class ResultsTable extends React.Component {
 
     render() {
 
+        const columns = ['Gene',
+            'Nucleotide Change',
+            'Protein Change',
+            'Alias',
+            'Region',
+            'Reported Classification',
+            'Last Evaluated',
+            'Last Updated',
+            'URL'];
 
-        const columns = [
-            {
-                key: 'Gene',
-                name: 'Gene',
-                locked: true,
-                width: 80,
-            },
-            {
-                key: 'Nucleotide Change',
-                name: 'Nucleotide Change',
-                width: 350,
-                resizable: true,
-            },
-            {
-                key: 'Protein Change',
-                name: 'Protein Change',
-                width: 110,
-            },
-            {
-                key: 'Alias',
-                name: 'Alias',
-                width: 80,
-                resizable: true,
-            },
-            {
-                key: 'Region',
-                name: 'Region',
-                width: 100,
-            },
-            {
-                key: 'Reported Classification',
-                name: 'Reported Classification',
-                width: 200,
-            },
-            {
-                key: 'Last Evaluated',
-                name: 'Last Evaluated',
-                width: 130,
-            },
-            {
-                key: 'Last Updated',
-                name: 'Last Updated',
-                width: 130,
-            },
-            {
-                key: 'URL',
-                name: 'More info',
-                width: 200,
-                resizable: true
-            },
-        ];
+        const variants = this.state.variants;
+
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                <br />
-                <ReactDataGrid
-                  enableCellSelect
-                  columns={columns}
-                  rowGetter={this.getRows}
-                  rowsCount={this.state.variants.length}
-                  minWidth={1400}
-                  minHeight={300}
-                />
+                  <Table displayBorder={true} >
+         <TableHeader  displaySelectAll={false} adjustForCheckbox={false}>
+           <TableRow >
+             {
+               columns.map((col, i) => <TableHeaderColumn key={i}>{col}</TableHeaderColumn>)
+             }
+           </TableRow>
+         </TableHeader>
+         <TableBody displayRowCheckbox={false}>
+
+             {
+              variants.map(function(row, rowIndex) {
+                return (
+                  <TableRow key={'row-'+rowIndex}>
+                    {
+                      columns.map(function(column, colIndex) {
+                        return (
+                          <TableRowColumn key={'row-'+rowIndex+'-col-'+colIndex} style={{
+  whiteSpace: 'normal',
+  wordWrap: 'break-word'
+}}>
+                            {row[column]}
+                          </TableRowColumn>
+                        )
+                      })
+                    }
+                  </TableRow>
+                )
+              })
+            }
+           }
+         </TableBody>
+       </Table>
+
             </div>
         );
     }
