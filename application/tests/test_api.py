@@ -9,12 +9,12 @@ class TestAPI(BaseTestConfig):
         resp = self.app.get('/api/suggestions/MA')
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))['results']
-        self.assertEqual(data, [u'MAPK10', u'MARVELD2', u'MAT1A'])
+        self.assertEqual(data, [u'MAOA', u'MAPK10', u'MARVELD2', u'MAT1A'])
 
         resp = self.app.get('/api/suggestions/ma') #expect same results with lowercase
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))['results']
-        self.assertEqual(data, [u'MAPK10', u'MARVELD2', u'MAT1A'])
+        self.assertEqual(data, [u'MAOA', u'MAPK10', u'MARVELD2', u'MAT1A'])
 
         # no matches
         resp = self.app.get('/api/suggestions/MAQ')
@@ -32,7 +32,12 @@ class TestAPI(BaseTestConfig):
         self.assertEqual(resp.status_code, 200)
         data = json.loads(resp.data.decode("utf-8"))
         self.assertEqual(len(data), 3)  # number of variants
-        self.assertEqual(len(data[0]), 23)  # number of attributes for a variant
+        # test a gene
+        first_gene = data[0]
+        self.assertEqual(len(first_gene), 23)  # number of attributes for a variant
+        self.assertEqual(first_gene['Gene'], u'MAT1A')
+        # test most specific attribute
+        self.assertEqual(first_gene['URL'], u'https://www.ncbi.nlm.nih.gov/clinvar/RCV000001265')
 
         # missing query
         resp = self.app.get('/api/variants/')
