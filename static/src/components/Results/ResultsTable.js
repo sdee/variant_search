@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-
-const ReactDataGrid = require('react-data-grid');
+import Paper from 'material-ui/Paper';
+import { Link } from 'react-router';
 
 import {
   Table,
@@ -51,41 +51,50 @@ export default class ResultsTable extends React.Component {
 
         return (
             <div>
+
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                <Table displayBorder >
-                    <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-                        <TableRow >
-                            {
-                              columns.map((col, i) =>
-                                  <TableHeaderColumn
-                                    key={i}
-                                    style={style}
-                                  >
-                                      <b>{col}</b>
-                                  </TableHeaderColumn>)
-                            }
-                        </TableRow>
-                    </TableHeader>
-                    <TableBody displayRowCheckbox={false} stripedRows>
-                        {
-                        variants.map((row, rowIndex) => (
-                            <TableRow key={`row-${rowIndex}`}>
+                <Paper>
+                    <Table displayBorder >
+                        <TableHeader
+                          displaySelectAll={false}
+                          adjustForCheckbox={false}
+                        >
+                            <TableRow >
                                 {
-                                columns.map((column, colIndex) => (
-                                    <TableRowColumn
-                                      key={`row-${rowIndex}-col-${colIndex}`}
-                                      style={style}
-                                    >
-                                        {row[column]}
-                                    </TableRowColumn>
-                                    ))
-                              }
+                                  columns.map((col, i) =>
+                                      <TableHeaderColumn
+                                        key={i}
+                                        style={style}
+                                      >
+                                          <b>{col}</b>
+                                      </TableHeaderColumn>)
+                                }
                             </TableRow>
-                          ))
-                        }
-                    </TableBody>
-                </Table>
+                        </TableHeader>
+                        <TableBody displayRowCheckbox={false} stripedRows>
+                            {
+                            variants.map((row, rowIndex) => (
+                                <TableRow key={`row-${rowIndex}`}>
+                                    {
+                                    columns.map((column, colIndex) => (
+                                        <TableRowColumn
+                                          key={`row-${rowIndex}-col-${colIndex}`}
+                                          style={style}
+                                        >
+                                            {row[column]}
+                                        </TableRowColumn>
+                                        ))
+                                  }
+                                </TableRow>
+                              ))
+                            }
+                        </TableBody>
+                    </Table>
+                </Paper>
+                <br/>
+                <Link to="/search">Back to Search</Link>
             </div>
+
         );
     }
 }

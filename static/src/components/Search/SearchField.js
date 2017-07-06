@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
-import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
+import List, { ListItem } from 'material-ui/List';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -42,6 +42,13 @@ class SearchField extends React.Component {
             value: newValue,
         });
     };
+
+    onEnter = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            this.context.router.push(`/gene/${this.state.value}`);
+        }
+    }
 
   // Autosuggest will call this function every time you need to update suggestions.
   // You already implemented this logic above, so just use it.
@@ -95,6 +102,7 @@ class SearchField extends React.Component {
         const inputProps = {
             value,
             onChange: this.onChange,
+            onKeyDown: this.onEnter,
         };
 
         return (
@@ -109,25 +117,26 @@ class SearchField extends React.Component {
                       <SuggestionsContainer rest={rest}>
                           {children}
                       </SuggestionsContainer>
-        )}
+                  )}
                   renderSuggestion={suggestion => (
                       <div>
-                          <SuggestionItem suggestion={suggestion}/>
+                          <SuggestionItem suggestion={suggestion} />
                           <Divider />
                       </div>
-        )}
+                  )}
                   inputProps={inputProps}
                   renderInputComponent={inputProps => renderInputComponent(inputProps)}
                 />
                 {
-            noSuggestionsAvailable &&
-            <div className="no-suggestions">
-                <ListItem
-                  primaryText={'No Matches'}
-                  style={{ textAlign: 'left' }}
-                />
-            </div>
-          }
+                  noSuggestionsAvailable &&
+                  <div className="no-suggestions">
+                      <ListItem
+                        primaryText={'No Matches'}
+                        style={{ textAlign: 'left' }}
+                      />
+                  </div>
+                }
+
                 <RaisedButton
                   label="Search" primary
                   style={{ margin: '5px' }}
@@ -148,5 +157,9 @@ class SearchField extends React.Component {
 SearchField.propTypes = {
 
 };
+
+SearchField.contextTypes = {
+    router: React.PropTypes.func.isRequired
+  };
 
 export default SearchField;
