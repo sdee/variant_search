@@ -58,7 +58,6 @@ export default class ResultsTable extends React.Component {
 
         return (
             <div>
-
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
                 <Paper>
                     <Table displayBorder >

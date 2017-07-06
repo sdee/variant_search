@@ -6,19 +6,6 @@ import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import Divider from 'material-ui/Divider';
 
-function mapStateToProps(state) {
-    return {
-
-    };
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-
-  };
-}
-
-@connect(mapStateToProps, mapDispatchToProps)
 export class Header extends Component {
     constructor(props) {
         super(props);

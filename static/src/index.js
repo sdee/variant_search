@@ -13,15 +13,14 @@ require('expose?$!expose?jQuery!jquery');
 require('bootstrap-webpack');
 
 injectTapEventPlugin();
-const store = configureStore();
-const history = syncHistoryWithStore(browserHistory, store);
+// const store = configureStore();
+// const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
-    <Provider store={store}>
-        <Router history={history}>
+
+        <Router history={browserHistory}>
             <Redirect from="/" to="search" />
             {routes}
-        </Router>
-    </Provider>,
+        </Router>,
     document.getElementById('root')
 );
