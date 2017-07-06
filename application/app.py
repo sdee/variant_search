@@ -2,7 +2,7 @@ import json
 import os
 import unicodecsv
 from collections import defaultdict
-from flask import Flask, g, abort
+from flask import g, abort
 import marisa_trie
 from index import app
 from basedir import basedir
@@ -31,7 +31,7 @@ def initialize_search_data():
     genes = Set()
     variants_by_gene = defaultdict(list)
     with open(os.path.join(basedir, VARIANT_FILE_PATH)) as f:
-        lines = unicodecsv.DictReader(f, delimiter='\t')
+        lines = unicodecsv.DictReader(f, delimiter='\t', encoding='utf-8')
         for line in lines:
             gene = line['Gene']
             genes.add(gene)
