@@ -4,17 +4,22 @@ Variant Search is a tool for searching for genetic variants using gene name. The
 
 # Quickstart #
 
-### Install Front-End Requirements
-```sh
-$ cd static
-$ npm install
-```
-
 ### Run Back-End
 
 ```sh
 $ pip install -r requirements.txt 
 $ python manage.py runserver
+* Try: 
+  * http://localhost:5000/api/suggestions/AB
+  * http://localhost:5000/api/variants/EYS
+```
+
+### Install Front-End
+```sh
+$ cd static
+$ npm install
+$ npm start
+Visit http://localhost:3000/ in browser (default port)
 ```
 
 ### Test Back-End
@@ -23,13 +28,13 @@ $ python manage.py runserver
   $ python tests/allTests.py
 ```
 
-### Run Front-End
+### Test Front-End 
 
 ```sh
-$ cd static
-$ npm install
-$ npm start
+$ npm test
 ```
+
+Note: coverage not yet complete
 
 # Stack Overview #
 
