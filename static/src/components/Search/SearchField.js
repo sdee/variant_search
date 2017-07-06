@@ -7,6 +7,8 @@ import Autosuggest from 'react-autosuggest';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import axios from 'axios';
+import SuggestionItem from './SuggestionItem';
+import SuggestionsContainer from './SuggestionsContainer';
 
 const getSuggestionValue = suggestion => suggestion;
 
@@ -104,17 +106,13 @@ class SearchField extends React.Component {
                   getSuggestionValue={getSuggestionValue}
                   shouldRenderSuggestions={shouldRenderSuggestions}
                   renderSuggestionsContainer={({ children, ...rest }) => (
-                      <List {...rest}>
+                      <SuggestionsContainer rest={rest}>
                           {children}
-                      </List>
+                      </SuggestionsContainer>
         )}
                   renderSuggestion={suggestion => (
                       <div>
-                          <ListItem
-                            primaryText={suggestion}
-                            style={{ textAlign: 'left' }}
-                            hoverColor={'#dddddd'}
-                          />
+                          <SuggestionItem suggestion={suggestion}/>
                           <Divider />
                       </div>
         )}
