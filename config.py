@@ -6,8 +6,7 @@ from setup import basedir
 class BaseConfig(object):
     SECRET_KEY = "SO_SECURE"
     DEBUG = True
-    VARIANT_FILE_PATH = 'application/tests/data/variants_medium.tsv'
-
+    VARIANT_FILE_PATH = 'data/variant_results_2000_variants.tsv'
 
 class TestingConfig(object):
     """Development configuration."""
@@ -17,4 +16,4 @@ class TestingConfig(object):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
     DEBUG_TB_ENABLED = True
     PRESERVE_CONTEXT_ON_EXCEPTION = False
-    VARIANT_FILE_PATH = 'application/tests/data/variants_small.tsv'
+    VARIANT_FILE_PATH = 'data/variant_results_2000_variants.tsv'
