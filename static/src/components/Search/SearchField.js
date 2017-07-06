@@ -11,7 +11,6 @@ import SuggestionItem from './SuggestionItem';
 import SuggestionsContainer from './SuggestionsContainer';
 import { debounce } from 'underscore';
 import Paper from 'material-ui/Paper';
-import Chip from 'material-ui/Chip';
 
 const getSuggestionValue = suggestion => suggestion;
 
@@ -38,6 +37,10 @@ class SearchField extends React.Component {
             isLoading: false,
         };
         this.lastRequestId = null;
+    }
+
+    componentDidMount() {
+      this.input.focus();
     }
 
     onChange = (event, { newValue }) => {
@@ -96,6 +99,12 @@ class SearchField extends React.Component {
         });
     };
 
+    storeInputReference = (autosuggest) => {
+        if (autosuggest !== null) {
+            this.input = autosuggest.input;
+        }
+    };
+
     clearInput = () => {
         this.setState({ value: '' });
     };
@@ -129,6 +138,7 @@ class SearchField extends React.Component {
                   )}
                   inputProps={inputProps}
                   renderInputComponent={inputProps => renderInputComponent(inputProps)}
+                  ref={this.storeInputReference}
                 />
                 {
                   noSuggestionsAvailable &&
