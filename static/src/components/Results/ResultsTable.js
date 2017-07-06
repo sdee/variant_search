@@ -15,15 +15,14 @@ export default class ResultsTable extends React.Component {
     getRows = i => this.state.variants[i];
 
     componentDidMount() {
-        axios.get(`/api/variants/${this.props.params.geneName}`)
+        axios.get(`/api/variants/${this.state.geneName}`)
         .then(({ data }) => {
             this.setState({ variants: data });
         });
     }
 
     render() {
-        const { params } = this.props;
-        const { geneName } = params;
+
 
         const columns = [
             {
