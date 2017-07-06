@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
-
 import List, { ListItem, ListItemIcon, ListItemText } from 'material-ui/List';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
@@ -55,7 +54,6 @@ class SearchField extends React.Component {
         this.setState({
             isLoading: true,
         });
-
         this.lastRequestId = setTimeout(() => {
             axios.get(`/api/suggestions/${value}`)
           .then(({ data }) => {
@@ -75,7 +73,6 @@ class SearchField extends React.Component {
 
           })
           .catch((err) => { console.log(err); });
-
         }, 1000);
     };
 
