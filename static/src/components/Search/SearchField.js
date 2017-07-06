@@ -9,6 +9,7 @@ import Divider from 'material-ui/Divider';
 import axios from 'axios';
 import SuggestionItem from './SuggestionItem';
 import SuggestionsContainer from './SuggestionsContainer';
+import { debounce } from 'underscore';
 
 const getSuggestionValue = suggestion => suggestion;
 
@@ -50,10 +51,8 @@ class SearchField extends React.Component {
         }
     }
 
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
     onSuggestionsFetchRequested = ({ value }) => {
-        this.loadSuggestions(value);
+        this.debouncedLoadSuggestions(value);
     };
 
     loadSuggestions = (value) => {
@@ -84,6 +83,8 @@ class SearchField extends React.Component {
           .catch((err) => { console.log(err); });
         }, 1000);
     };
+
+    debouncedLoadSuggestions = value => debounce(this.loadSuggestions(value), 200);
 
   // Autosuggest will call this function every time you need to clear suggestions.
     onSuggestionsClearRequested = () => {

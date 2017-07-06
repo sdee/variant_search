@@ -47,6 +47,13 @@ export default class ResultsTable extends React.Component {
             wordWrap: 'break-word',
         };
 
+        const displayCell = (row, column) => row[column].includes('http') ?
+            <a
+              href={`${row[column]}`}
+              target="_blank"
+            >{row[column]}
+            </a> : row[column];
+
         const variants = this.state.variants;
 
         return (
@@ -81,7 +88,7 @@ export default class ResultsTable extends React.Component {
                                           key={`row-${rowIndex}-col-${colIndex}`}
                                           style={style}
                                         >
-                                            {row[column]}
+                                            { displayCell(row, column) }
                                         </TableRowColumn>
                                         ))
                                   }
@@ -91,7 +98,7 @@ export default class ResultsTable extends React.Component {
                         </TableBody>
                     </Table>
                 </Paper>
-                <br/>
+                <br />
                 <Link to="/search">Back to Search</Link>
             </div>
 
