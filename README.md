@@ -1,35 +1,40 @@
 # Introducting Variant Search #
 
-Variant Search is a tool for searching for genetic variants using gene name. The key feature is auto-suggest which aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
+Variant Search is a tool for searching for genetic variants using gene name. The key feature, auto-suggest, aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
 
 # Quickstart #
-
-### Install Front-End Requirements
-```sh
-$ cd static
-$ npm install
-```
 
 ### Run Back-End
 
 ```sh
 $ pip install -r requirements.txt 
 $ python manage.py runserver
+* Try: 
+  * http://localhost:5000/api/suggestions/AB
+  * http://localhost:5000/api/variants/EYS
+```
+
+### Install Front-End
+```sh
+$ cd static
+$ npm install
+$ npm start
+Visit http://localhost:3000/ in browser (default port)
 ```
 
 ### Test Back-End
 
 ```sh
-  $ python tests/allTests.py
+$ python tests/allTests.py
 ```
 
-### Run Front-End
+### Test Front-End 
 
 ```sh
-$ cd static
-$ npm install
-$ npm start
+$ npm test
 ```
+
+Note: coverage of client-side not yet complete
 
 # Stack Overview #
 
@@ -47,3 +52,4 @@ $ npm start
   * [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking endpoints
 * [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/) for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
+* Variants data from [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download)
