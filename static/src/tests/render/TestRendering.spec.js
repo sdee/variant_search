@@ -31,14 +31,14 @@ describe('renders', (t) => {
             />);
 
         const table3 = render(
-                <ResultsTable
+            <ResultsTable
                   params={{
                       geneName: 'EYS',
                   }}
                 />);
 
-        console.log(table.debug());
-        console.log(table3.text())
+        // console.log(table.debug());
+        // console.log(table3.text())
 
         expect(table.find(ReactDataGrid).length).equal(1);
         expect(table3.text()).to.contain('Variants for EYS');
