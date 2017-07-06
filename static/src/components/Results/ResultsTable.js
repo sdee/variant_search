@@ -22,9 +22,10 @@ export default class ResultsTable extends React.Component {
     }
 
     render() {
-        const { query } = this.props.location;
         const { params } = this.props;
         const { geneName } = params;
+        console.log("________>>>>>>>");
+        console.log(this.props);
 
         const columns = [
             {
