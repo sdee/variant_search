@@ -1,8 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, render, shallow } from 'enzyme';
 import { Route, MemoryRouter as Router } from 'react-router-dom';
-import ReactDOM from 'react-dom'
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
 import ResultsTable from '../../components/Results/ResultsTable';
 import SearchField from '../../components/Search/SearchField';
 var TestUtils = require('react-dom/test-utils')
@@ -31,12 +30,17 @@ describe('renders', (t) => {
               }}
             />);
 
+        const table3 = render(
+                <ResultsTable
+                  params={{
+                      geneName: 'EYS',
+                  }}
+                />);
 
         console.log(table.debug());
-        console.log(table.find(h1))
-       
-        // expect(table).toBeDefined();
+        console.log(table3.text())
+
         expect(table.find(ReactDataGrid).length).equal(1);
-        // expect(table.find)
+        expect(table3.text()).to.contain('Variants for EYS');
     });
 });
