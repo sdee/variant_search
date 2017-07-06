@@ -76,7 +76,6 @@ export default class ResultsTable extends React.Component {
                 resizable: true
             },
         ];
-
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
