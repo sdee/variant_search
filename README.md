@@ -25,7 +25,7 @@ Visit http://localhost:3000/ in browser (default port)
 ### Test Back-End
 
 ```sh
-  $ python tests/allTests.py
+$ python tests/allTests.py
 ```
 
 ### Test Front-End 
