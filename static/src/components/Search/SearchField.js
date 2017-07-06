@@ -10,6 +10,8 @@ import axios from 'axios';
 import SuggestionItem from './SuggestionItem';
 import SuggestionsContainer from './SuggestionsContainer';
 import { debounce } from 'underscore';
+import Paper from 'material-ui/Paper';
+import Chip from 'material-ui/Chip';
 
 const getSuggestionValue = suggestion => suggestion;
 
@@ -150,6 +152,16 @@ class SearchField extends React.Component {
                   onClick={this.clearInput}
                   style={{ margin: '5px' }}
                 />
+                <br />
+                <br />
+                <Paper zDepth={0} style={{ padding: '5px' }}>
+                    <div>
+                        <b>Sample Searches: </b>
+                        <Link to={'/gene/ CYP11B1'} style={{ marginLeft: '5px' }}>CYP11B1</Link>
+                        <Link to={'/gene/EYS'} style={{ marginLeft: '5px' }}>EYS</Link>
+                        <Link to={'/gene/PROC'} style={{ marginLeft: '5px' }}>PROC</Link>
+                    </div>
+                </Paper>
             </div>
         );
     }
@@ -160,7 +172,7 @@ SearchField.propTypes = {
 };
 
 SearchField.contextTypes = {
-    router: React.PropTypes.func.isRequired
-  };
+    router: React.PropTypes.func.isRequired,
+};
 
 export default SearchField;
