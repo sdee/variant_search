@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Route, MemoryRouter as Router } from 'react-router-dom';
 import ReactDOM from 'react-dom'
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import ResultsTable from '../../components/Results/ResultsTable';
 import SearchField from '../../components/Search/SearchField';
 var TestUtils = require('react-dom/test-utils')
@@ -33,8 +33,10 @@ describe('renders', (t) => {
 
 
         console.log(table.debug());
-        console.log(table2);
+        console.log(table.find(h1))
+       
         // expect(table).toBeDefined();
         expect(table.find(ReactDataGrid).length).equal(1);
+        // expect(table.find)
     });
 });
