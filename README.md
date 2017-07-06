@@ -1,6 +1,6 @@
 # Introducting Variant Search #
 
-Variant Search is a tool for searching for genetic variants using gene name. The key feature is auto-suggest which aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
+Variant Search is a tool for searching for genetic variants using gene name. The key feature, auto-suggest, aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
 
 # Quickstart #
 
@@ -34,7 +34,7 @@ $ python tests/allTests.py
 $ npm test
 ```
 
-Note: coverage not yet complete
+Note: coverage of client-side not yet complete
 
 # Stack Overview #
 
@@ -52,3 +52,4 @@ Note: coverage not yet complete
   * [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking endpoints
 * [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/) for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
+* Variants data from [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download)
