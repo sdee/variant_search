@@ -1,6 +1,6 @@
 # Introducting Variant Search #
 
-Tool for searching for genetic variants using gene name. Key feature is auto-suggest which aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
+Variant Search is a tool for searching for genetic variants using gene name. The key feature is auto-suggest which aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
 
 # Quickstart #
 
@@ -40,8 +40,9 @@ $ npm start
 * [Material UI](http://www.material-ui.com/#/) for React UI components including Table and Buttons (based on Google's Material Design)
 * Client-side Testing:
   * [Mocha](https://mochajs.org/) for defining tests
-  * [expect](https://github.com/mjackson/expect) for assertions
+  * [Expect](https://github.com/mjackson/expect) for assertions
   * [Enzyme](https://github.com/airbnb/enzyme) for rendering
   * [Karma Runner](http://karma-runner.github.io/) for running tests
   * [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking endpoints
+* [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/)  for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
