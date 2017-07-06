@@ -157,7 +157,7 @@ class SearchField extends React.Component {
                 <Paper zDepth={0} style={{ padding: '5px' }}>
                     <div>
                         <b>Sample Searches: </b>
-                        <Link to={'/gene/ CYP11B1'} style={{ marginLeft: '5px' }}>CYP11B1</Link>
+                        <Link to={'/gene/CYP11B1'} style={{ marginLeft: '5px' }}>CYP11B1</Link>
                         <Link to={'/gene/EYS'} style={{ marginLeft: '5px' }}>EYS</Link>
                         <Link to={'/gene/PROC'} style={{ marginLeft: '5px' }}>PROC</Link>
                     </div>
