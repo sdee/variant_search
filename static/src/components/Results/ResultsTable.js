@@ -24,8 +24,6 @@ export default class ResultsTable extends React.Component {
     render() {
         const { params } = this.props;
         const { geneName } = params;
-        console.log("________>>>>>>>");
-        console.log(this.props);
 
         const columns = [
             {
