@@ -53,3 +53,9 @@ Note: coverage of client-side not yet complete
 * [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/) for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
 * Variants data from [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download)
+
+# In Action #
+
+![Demo](/variant_search_demo.gif "Demo")
+
+(Based on running smaller, development version of variants file)
