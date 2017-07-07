@@ -8,6 +8,7 @@ class BaseConfig(object):
     DEBUG = True
     VARIANT_FILE_PATH = 'data/variant_results_2000_variants.tsv'
 
+
 class TestingConfig(object):
     """Development configuration."""
     TESTING = True
