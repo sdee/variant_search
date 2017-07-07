@@ -47,7 +47,7 @@ Then, `VARIANT_FILE_PATH` should be updated in `config.py` either in `BaseConfig
 
 # Endpoints #
 
-* GET http://localhost:5000/api/suggestions/<FRAGMENT>
+* GET `http://localhost:5000/api/suggestions/<FRAGMENT>`
 
 Sample response:
 
@@ -55,7 +55,7 @@ Sample response:
 {"results": ["ABAT", "ABCA12", "ABCA3", "ABCB1", "ABCC1", "ABCC2", "ABCC6", "ABCC9", "ABCD1", "ABHD12", "ABHD5"]}
 ```
 
-* GET http://localhost:5000/api/variants/<GENE NAME>
+* GET `http://localhost:5000/api/variants/<GENE NAME>`
 
 ```json
 [{"Inferred Classification": "Pathogenic", "Nucleotide Change": "", "Source": "ClinVar", "Chr": null, "Ref": null, "Reported Ref": null, "Protein Change": "", "Assembly": null, "Reported Alt": null, "Genomic Start": null, "Genomic Stop": null, "Other Mappings": "", "Submitter Comment": "", "URL": "https://www.ncbi.nlm.nih.gov/clinvar/RCV000000569", "Last Updated": "2017-04-25", "Region": "", "Reported Classification": "Pathogenic", "Alias": "", "Transcripts": "", "Gene": "EYS", "Last Evaluated": "2008-11-01", "Accession": null, "Alt": null} ...]
