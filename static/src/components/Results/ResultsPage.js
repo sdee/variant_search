@@ -35,15 +35,18 @@ export default class ResultsPage extends React.Component {
             'URL',
         ];
 
-        const rows = this.state.variants;
-        console.log(columns);
-        console.log(rows);
-
+        const variants = this.state.variants;
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                <Paper>
-                    <ResultsTable rows={rows} columns={columns} />
+                <Paper style={{ padding: '10px' }}>
+                    {variants.length > 0 ? (
+                        <ResultsTable rows={variants} columns={columns} />
+                     ) : (
+                         <h3>No results found.</h3>
+                     )}
+
+
                 </Paper>
                 <br />
                 <Link to="/search">Back to Search</Link>

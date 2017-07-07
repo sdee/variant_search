@@ -32,25 +32,25 @@ export default class ResultsTable extends React.Component {
 
         return (
             <div>
-                    <Table displayBorder >
-                        <TableHeader
-                          displaySelectAll={false}
-                          adjustForCheckbox={false}
-                        >
-                            <TableRow >
-                                {
-                                  columns.map((col, i) =>
-                                      <TableHeaderColumn
-                                        key={i}
-                                        style={style}
-                                      >
-                                          <b>{col}</b>
-                                      </TableHeaderColumn>)
-                                }
-                            </TableRow>
-                        </TableHeader>
-                        <TableBody displayRowCheckbox={false} stripedRows>
+                <Table displayBorder >
+                    <TableHeader
+                      displaySelectAll={false}
+                      adjustForCheckbox={false}
+                    >
+                        <TableRow >
                             {
+                            columns.map((col, i) =>
+                                <TableHeaderColumn
+                                  key={i}
+                                  style={style}
+                                >
+                                    <b>{col}</b>
+                                </TableHeaderColumn>)
+                          }
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody displayRowCheckbox={false} stripedRows>
+                        {
                             rows.map((row, rowIndex) => (
                                 <TableRow key={`row-${rowIndex}`}>
                                     {
@@ -67,8 +67,8 @@ export default class ResultsTable extends React.Component {
                                 </TableRow>
                               ))
                             }
-                        </TableBody>
-                    </Table>
+                    </TableBody>
+                </Table>
                 <br />
             </div>
 
