@@ -21,6 +21,12 @@ export default class ResultsPage extends React.Component {
         axios.get(`/api/variants/${this.state.geneName}`)
     .then(({ data }) => {
         this.setState({ variants: data, isLoading: false });
+    })
+    .catch((error) => {
+        if (error.response && error.response.status === 404) {
+            this.setState({ isLoading: false });
+        }
+        throw error;
     });
     }
 
@@ -42,7 +48,7 @@ export default class ResultsPage extends React.Component {
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                {isLoading === true ? (
+                {isLoading? (
                     <LinearProgress mode="indeterminate" />
                 ) : (
                     <Paper style={{ padding: '10px' }}>
