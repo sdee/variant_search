@@ -143,7 +143,9 @@ class SearchField extends React.Component {
                   <div className="no-suggestions">
                       <ListItem
                         primaryText={'No Matches'}
-                        style={{ textAlign: 'left' }}
+                        style={{ textAlign: 'left',
+                            display: 'block',
+                            position: 'absolute' }}
                       />
                   </div>
                 }
