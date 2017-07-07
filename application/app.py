@@ -6,7 +6,6 @@ from flask import g, abort
 import marisa_trie
 from index import app
 from basedir import basedir
-from sets import Set
 
 VARIANT_FILE_PATH = app.config['VARIANT_FILE_PATH']
 
@@ -29,11 +28,11 @@ class GeneNameStore:
 Important Note: the "global" g object provided by flask is created before a request is
 started and flushed at the end of the request. A long-term solution for
 initializing the data is using a cache like werkzeug's SimpleCache or Redis. With a
-cache, we could potentially use before_first_request instead. 
+cache, we could potentially use before_first_request instead.
 '''
 @app.before_request
 def initialize_search_data():
-    genes = Set()
+    genes = set()
     variants_by_gene = defaultdict(list)
     with open(os.path.join(basedir, VARIANT_FILE_PATH)) as f:
         lines = unicodecsv.DictReader(f, delimiter='\t', encoding='utf-8')
