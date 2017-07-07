@@ -11,7 +11,6 @@ import Paper from 'material-ui/Paper';
 import SuggestionItem from './SuggestionItem';
 import SuggestionsContainer from './SuggestionsContainer';
 
-
 const getSuggestionValue = suggestion => suggestion;
 
 const shouldRenderSuggestions = value => value.trim().length >= 2;
@@ -90,7 +89,6 @@ class SearchField extends React.Component {
 
     debouncedLoadSuggestions = value => debounce(this.loadSuggestions(value), 200);
 
-  // Autosuggest will call this function every time you need to clear suggestions.
     onSuggestionsClearRequested = () => {
         this.setState({
             suggestions: [],
@@ -109,6 +107,7 @@ class SearchField extends React.Component {
     };
     render() {
         const { value, suggestions, isLoading, noSuggestionsAvailable } = this.state;
+
     // Autosuggest will pass through all these props to the input.
         const inputProps = {
             value,

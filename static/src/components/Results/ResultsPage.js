@@ -48,7 +48,7 @@ export default class ResultsPage extends React.Component {
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                {isLoading? (
+                {isLoading ? (
                     <LinearProgress mode="indeterminate" />
                 ) : (
                     <Paper style={{ padding: '10px' }}>
