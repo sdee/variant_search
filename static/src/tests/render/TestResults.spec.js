@@ -3,9 +3,7 @@ import { mount } from 'enzyme';
 import LinearProgress from 'material-ui/LinearProgress';
 import { Link } from 'react-router';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import {
-  TableRow,
-} from 'material-ui/Table';
+import { TableRow, } from 'material-ui/Table';
 import ResultsPage from '../../components/Results/ResultsPage';
 import ResultsTable from '../../components/Results/ResultsTable';
 

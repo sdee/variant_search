@@ -11,7 +11,6 @@ import Paper from 'material-ui/Paper';
 import SuggestionItem from './SuggestionItem';
 import SuggestionsContainer from './SuggestionsContainer';
 
-
 const getSuggestionValue = suggestion => suggestion;
 
 const shouldRenderSuggestions = value => value.trim().length >= 2;
