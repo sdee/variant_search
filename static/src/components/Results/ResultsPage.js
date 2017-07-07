@@ -12,13 +12,14 @@ export default class ResultsPage extends React.Component {
         this.state = {
             geneName: this.props.params.geneName,
             variants: [],
+            isLoading: true,
         };
     }
 
     componentDidMount() {
         axios.get(`/api/variants/${this.state.geneName}`)
     .then(({ data }) => {
-        this.setState({ variants: data });
+        this.setState({ variants: data, isLoading: false });
     });
     }
 
