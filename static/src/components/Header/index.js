@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-import { connect } from 'react-redux';
 import AppBar from 'material-ui/AppBar';
-import MenuItem from 'material-ui/MenuItem';
-import FlatButton from 'material-ui/FlatButton';
-import Divider from 'material-ui/Divider';
 
 export class Header extends Component {
     constructor(props) {
@@ -20,7 +16,7 @@ export class Header extends Component {
             <header>
                 <AppBar
                   title="Variant Search"
-									showMenuIconButton={false}
+                  showMenuIconButton={false}
                 />
             </header>
 
