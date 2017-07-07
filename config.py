@@ -1,16 +1,10 @@
-import os
-
-from setup import basedir
-
-
 class BaseConfig(object):
-    SECRET_KEY = "SO_SECURE"
     DEBUG = True
     VARIANT_FILE_PATH = 'data/variant_results_2000_variants.tsv'
 
 
 class TestingConfig(object):
-    """Development configuration."""
+    """For unitt ests."""
     TESTING = True
     DEBUG = True
     WTF_CSRF_ENABLED = False

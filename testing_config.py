@@ -1,8 +1,5 @@
 from flask_testing import TestCase
 from application.app import app
-import os
-from setup import basedir
-import json
 
 
 class BaseTestConfig(TestCase):
