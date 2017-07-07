@@ -25,10 +25,10 @@ class GeneNameStore:
         return suggestions
 
 '''
-Important Note: the "global" g object provided by flask is created before a request is
-started and flushed at the end of the request. A long-term solution for
-initializing the data is using a cache like werkzeug's SimpleCache or Redis. With a
-cache, we could potentially use before_first_request instead.
+Important Note: the "global" g object provided by flask is created before a
+requestis started and flushed at the end of the request. A long-term solution
+for initializing the data is using a cache like werkzeug's SimpleCache or Redis.
+With a cache, we could potentially use before_first_request instead.
 '''
 @app.before_request
 def initialize_search_data():

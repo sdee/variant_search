@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Paper from 'material-ui/Paper';
+import LinearProgress from 'material-ui/LinearProgress';
 import { Link } from 'react-router';
 import ResultsTable from './ResultsTable';
 
@@ -37,18 +38,21 @@ export default class ResultsPage extends React.Component {
         ];
 
         const variants = this.state.variants;
+        const isLoading = this.state.isLoading;
         return (
             <div>
                 <h1>{`Variants for ${this.state.geneName}`}</h1>
-                <Paper style={{ padding: '10px' }}>
-                    {variants.length > 0 ? (
-                        <ResultsTable rows={variants} columns={columns} />
+                {isLoading === true ? (
+                    <LinearProgress mode="indeterminate" />
+                ) : (
+                    <Paper style={{ padding: '10px' }}>
+                        {variants.length > 0 ? (
+                            <ResultsTable rows={variants} columns={columns} />
                      ) : (
                          <h3>No results found.</h3>
                      )}
-
-
-                </Paper>
+                    </Paper>
+              )}
                 <br />
                 <Link to="/search">Back to Search</Link>
             </div>
