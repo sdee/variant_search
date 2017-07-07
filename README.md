@@ -1,8 +1,8 @@
 # Introducting Variant Search #
 
-Variant Search is a tool for searching for genetic variants using gene name. The key feature, auto-suggest, aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
+Variant Search is a tool for searching for genetic variants by gene name. The key feature, auto-suggest, aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
 
-# Quickstart #
+# Setup #
 
 ### Run Back-End
 
@@ -10,11 +10,12 @@ Variant Search is a tool for searching for genetic variants using gene name. The
 $ pip install -r requirements.txt 
 $ python manage.py runserver
 * Try: 
-  * http://localhost:5000/api/suggestions/AB
-  * http://localhost:5000/api/variants/EYS
+  * GET http://localhost:5000/api/suggestions/AB
+  * GET http://localhost:5000/api/variants/EYS
 ```
 
-### Install Front-End
+### Install Front-End 
+(dependent on back-end to be running)
 ```sh
 $ cd static
 $ npm install
@@ -35,6 +36,32 @@ $ npm test
 ```
 
 Note: coverage of client-side not yet complete
+
+# Data #
+
+By default, the development version of this application runs off a variants file with 2,000 variants. 
+
+The full variants file can be retrieved at [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download) and copied over to /data. 
+
+Then, `VARIANT_FILE_PATH` should be updated in `config.py` either in `BaseConfig` for the web server or `TestingConfig` for the tests.
+
+# Endpoints #
+
+* GET http://localhost:5000/api/suggestions/<FRAGMENT>
+
+Sample response:
+
+```json
+{"results": ["ABAT", "ABCA12", "ABCA3", "ABCB1", "ABCC1", "ABCC2", "ABCC6", "ABCC9", "ABCD1", "ABHD12", "ABHD5"]}
+```
+
+* GET http://localhost:5000/api/variants/<GENE NAME>
+
+```json
+[{"Inferred Classification": "Pathogenic", "Nucleotide Change": "", "Source": "ClinVar", "Chr": null, "Ref": null, "Reported Ref": null, "Protein Change": "", "Assembly": null, "Reported Alt": null, "Genomic Start": null, "Genomic Stop": null, "Other Mappings": "", "Submitter Comment": "", "URL": "https://www.ncbi.nlm.nih.gov/clinvar/RCV000000569", "Last Updated": "2017-04-25", "Region": "", "Reported Classification": "Pathogenic", "Alias": "", "Transcripts": "", "Gene": "EYS", "Last Evaluated": "2008-11-01", "Accession": null, "Alt": null} ...]
+```
+
+Note that this endpoint provides all of the columns in the variants file as attributes while the client currently only consumes a select few.
 
 # Stack Overview #
 
