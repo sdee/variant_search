@@ -9,7 +9,6 @@ class SuggestionItem extends React.Component {
     }
 
     render() {
-
         return (
             <div>
                 <ListItem

@@ -1,8 +1,5 @@
 import React from 'react';
-import axios from 'axios';
 import PropTypes from 'prop-types';
-import Paper from 'material-ui/Paper';
-import { Link } from 'react-router';
 
 import {
   Table,
@@ -15,33 +12,8 @@ import {
 
 export default class ResultsTable extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            geneName: this.props.params.geneName,
-            variants: [],
-        };
-    }
-
-    componentDidMount() {
-        axios.get(`/api/variants/${this.state.geneName}`)
-    .then(({ data }) => {
-        this.setState({ variants: data });
-    });
-    }
-
     render() {
-        const columns = [
-            'Gene',
-            'Nucleotide Change',
-            'Protein Change',
-            'Alias',
-            'Region',
-            'Reported Classification',
-            'Last Evaluated',
-            'Last Updated',
-            'URL',
-        ];
+
         const style = {
             whiteSpace: 'normal',
             wordWrap: 'break-word',
@@ -51,15 +23,15 @@ export default class ResultsTable extends React.Component {
             <a
               href={`${row[column]}`}
               target="_blank"
-            >{row[column]}
+            >
+                {row[column]}
             </a> : row[column];
 
-        const variants = this.state.variants;
+        const columns = this.props.columns;
+        const rows = this.props.rows;
 
         return (
             <div>
-                <h1>{`Variants for ${this.state.geneName}`}</h1>
-                <Paper>
                     <Table displayBorder >
                         <TableHeader
                           displaySelectAll={false}
@@ -79,10 +51,11 @@ export default class ResultsTable extends React.Component {
                         </TableHeader>
                         <TableBody displayRowCheckbox={false} stripedRows>
                             {
-                            variants.map((row, rowIndex) => (
+                            rows.map((row, rowIndex) => (
                                 <TableRow key={`row-${rowIndex}`}>
                                     {
                                     columns.map((column, colIndex) => (
+
                                         <TableRowColumn
                                           key={`row-${rowIndex}-col-${colIndex}`}
                                           style={style}
@@ -96,9 +69,7 @@ export default class ResultsTable extends React.Component {
                             }
                         </TableBody>
                     </Table>
-                </Paper>
                 <br />
-                <Link to="/search">Back to Search</Link>
             </div>
 
         );
@@ -106,9 +77,8 @@ export default class ResultsTable extends React.Component {
 }
 
 ResultsTable.propTypes = {
-    params: PropTypes.shape({
-        geneName: PropTypes.string,
-    }),
+    columns: PropTypes.array.isRequired,
+    rows: PropTypes.arrayOf(React.PropTypes.object),
 };
 
 ResultsTable.defaultProps = {

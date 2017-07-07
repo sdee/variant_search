@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
-import List, { ListItem } from 'material-ui/List';
+import { ListItem } from 'material-ui/List';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -30,7 +30,6 @@ const renderInputComponent = inputProps => (
 class SearchField extends React.Component {
     constructor() {
         super();
-
         this.state = {
             value: '',
             suggestions: [],
