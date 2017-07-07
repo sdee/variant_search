@@ -44,7 +44,7 @@ By default, the development version of this application runs off a variants file
 
 The full variants file can be retrieved at [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download) and copied over to /data (larger than allowed by Github). 
 
-Then, `VARIANT_FILE_PATH` should be updated in `config.py` either in `BaseConfig` for the web server or `TestingConfig` for the tests.
+Then, `VARIANT_FILE_PATH` should be updated in `config.py` either in `BaseConfig` for the web server or `TestingConfig` for the tests. The api currently expects the file to be utf-8.
 
 # Endpoints #
 
