@@ -2,15 +2,15 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import { Link } from 'react-router';
 import { ListItem } from 'material-ui/List';
-import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import axios from 'axios';
-import SuggestionItem from './SuggestionItem';
-import SuggestionsContainer from './SuggestionsContainer';
 import { debounce } from 'underscore';
 import Paper from 'material-ui/Paper';
+import SuggestionItem from './SuggestionItem';
+import SuggestionsContainer from './SuggestionsContainer';
+
 
 const getSuggestionValue = suggestion => suggestion;
 
@@ -39,7 +39,7 @@ class SearchField extends React.Component {
     }
 
     componentDidMount() {
-      this.input.focus();
+        this.input.focus();
     }
 
     onChange = (event, { newValue }) => {
