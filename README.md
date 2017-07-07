@@ -32,6 +32,7 @@ $ python tests/allTests.py
 ### Test Front-End 
 
 ```sh
+cd static
 $ npm test
 ```
 
@@ -41,13 +42,13 @@ Note: coverage of client-side not yet complete
 
 By default, the development version of this application runs off a variants file with 2,000 variants. 
 
-The full variants file can be retrieved at [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download) and copied over to /data. 
+The full variants file can be retrieved at [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download) and copied over to /data (larger than allowed by Github). 
 
 Then, `VARIANT_FILE_PATH` should be updated in `config.py` either in `BaseConfig` for the web server or `TestingConfig` for the tests.
 
 # Endpoints #
 
-* GET `http://localhost:5000/api/suggestions/<FRAGMENT>`
+* GET `http://localhost:5000/api/suggestions/<FRAGMENT>` where fragment is the prefix
 
 Sample response:
 
@@ -61,7 +62,7 @@ Sample response:
 [{"Inferred Classification": "Pathogenic", "Nucleotide Change": "", "Source": "ClinVar", "Chr": null, "Ref": null, "Reported Ref": null, "Protein Change": "", "Assembly": null, "Reported Alt": null, "Genomic Start": null, "Genomic Stop": null, "Other Mappings": "", "Submitter Comment": "", "URL": "https://www.ncbi.nlm.nih.gov/clinvar/RCV000000569", "Last Updated": "2017-04-25", "Region": "", "Reported Classification": "Pathogenic", "Alias": "", "Transcripts": "", "Gene": "EYS", "Last Evaluated": "2008-11-01", "Accession": null, "Alt": null} ...]
 ```
 
-Note that this endpoint provides all of the columns in the variants file as attributes while the client currently only consumes a select few.
+This endpoint provides all of the columns in the variants file as attributes for extensibility purposes. The client currently only displays a select few.
 
 # Stack Overview #
 
@@ -75,7 +76,7 @@ Note that this endpoint provides all of the columns in the variants file as attr
   * [Mocha](https://mochajs.org/) for defining tests
   * [Expect](https://github.com/mjackson/expect) for assertions
   * [Enzyme](https://github.com/airbnb/enzyme) for rendering
-  * [Karma Runner](http://karma-runner.github.io/) for running tests
+  * [Karma Runner](http://karma-runner.github.io/) for running all of the tests
   * [Axios Mock Adapter](https://github.com/ctimmerm/axios-mock-adapter) for mocking endpoints
 * [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/) for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
