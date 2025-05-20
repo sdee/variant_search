@@ -2,6 +2,12 @@
 
 Variant Search is a tool for searching for genetic variants by gene name. The key feature, auto-suggest, aids the user by offering a list of gene name suggestions based on what has been typed. When submitted, this tool displays a tabular list of variants for the query gene. 
 
+# In Action #
+
+![Demo](/variant_search_demo.gif "Demo")
+
+(Based on running smaller, development version of variants file)
+
 # Setup #
 
 ### Run Back-End
@@ -81,9 +87,3 @@ This endpoint provides all of the columns in the variants file as attributes for
 * [Webpack](https://webpack.github.io/) for bundling and [npm](https://www.npmjs.com/) for dependencies
 * [React-Redux-Flask](https://github.com/dternyak/React-Redux-Flask) boilerplate
 * Variants data from [http://clinvitae.invitae.com/download](http://clinvitae.invitae.com/download)
-
-# In Action #
-
-![Demo](/variant_search_demo.gif "Demo")
-
-(Based on running smaller, development version of variants file)
